@@ -29,6 +29,7 @@ export default function Login({toHomePage, toRegisterPage, setUserAccessToken, s
                 })
                 .catch(err => {
                     console.log('failed to login');
+                    console.log(err);
                     if (err.response.data === 'usernameAndEmailNotFound') {
                         setErrorLoginText(`Username/Email does not exist.`);
                     } else if (err.response.data === `loginFail`) {
