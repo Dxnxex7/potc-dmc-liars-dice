@@ -89,7 +89,7 @@ export default function Hiscore({page}) {
     };
 
     const sortByWinStreak = () => {
-        sortHiscoreData('winStreak');
+        sortHiscoreData('winStreakPeak');
         setWinStreakClass('sortBy');
     };
 
@@ -126,7 +126,7 @@ export default function Hiscore({page}) {
             <td className={gamesPlayedClass}>{row.totalGamesPlayed}</td>
             <td className={gamesWonClass}>{row.totalGamesWon}</td>
             <td className={gamesLostClass}>{row.totalGamesLost}</td>
-            <td className={winStreakClass}>{row.winStreak}</td>
+            <td className={winStreakClass}>{row.winStreakPeak}</td>
             <td className={leastTurnsClass}>{row.leastTurnsForWin}</td>
         </tr>
     )

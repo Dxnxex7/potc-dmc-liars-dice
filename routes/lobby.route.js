@@ -34,7 +34,7 @@ router.route('/getHiscoreData').get((req, res) => {
                     leastTurnsData = user.leastTurnsForWin;
                 };
                 const displayName = user.username.charAt(0).toUpperCase() + user.username.slice(1);
-                hiscoreData.push({username: displayName, totalGamesPlayed: user.totalGamesPlayed, totalGamesWon: user.totalGamesWon, totalGamesLost: user.totalGamesLost, winStreak: user.winStreak, leastTurnsForWin: leastTurnsData});
+                hiscoreData.push({username: displayName, totalGamesPlayed: user.totalGamesPlayed, totalGamesWon: user.totalGamesWon, totalGamesLost: user.totalGamesLost, winStreakPeak: user.winStreakPeak, leastTurnsForWin: leastTurnsData});
             });
             return res.status(200).send(hiscoreData);
         };
