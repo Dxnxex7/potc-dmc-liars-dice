@@ -696,11 +696,11 @@ export default function Game({checkUserAuthorizationSlashGenerateNewAccessToken,
                 <div className="game-right">
                     <div className="rules">
                         <div className="codex-title">Liar's Dice Codex</div>
-                        <div className="codex-rule">1. When both players are ready the game begins. During the game you can only see your own dice, and not your opponent's.</div>
-                        <div className="codex-rule">2. You take turns bidding on the total "amount" of dice of a certain "value".</div>
-                        <div className="codex-rule">3. You can call your opponent a liar by using the 'LIAH!' action, or you can agree to their bid by using the 'Call' action.</div>
-                        <div className="codex-rule">4. If the bid reaches the maximum (ten 6's), then the next player must either call their opponent's bid or call them a liar.</div>
-                        <div className="codex-rule">5. Game data is only saved after a game has been successfully completed. You can rematch your opponent after a game.</div>
+                        <div className="codex-rule">1. The game begins when both players are ready. During the game you can only see your own dice, and not your opponent's dice.</div>
+                        <div className="codex-rule">2. You take turns bidding on the total "amount" of dice of a certain "value" You can bid up until the maximum bid of ten 6's.</div>
+                        <div className="codex-rule">3. You can end the game and call your opponent a liar by using the 'LIAH!' action, or you can agree to their bid by using the 'Call' action.</div>
+                        <div className="codex-rule">4. The 'Call' action makes games significantly easier/shorter, so you can mutually agree with your opponent to not use it.</div>
+                        <div className="codex-rule">5. You can rematch your opponent after a game, or view the hiscores on the home page. Have fun!</div>
                     </div>
                     <div className="chat">
                         <div className="chat-title">Private Chat</div>

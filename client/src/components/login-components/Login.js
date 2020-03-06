@@ -19,7 +19,6 @@ export default function Login({toHomePage, toRegisterPage, setUserAccessToken, s
             axios.post('https://pure-wildwood-93382.herokuapp.com/login/', newLogin, {withCredentials: true})
                 .then(res => {
                     if (res.data.accessToken) {
-                        console.log('successfully got access token');
                         setUserAccessToken(res.data.accessToken);
                         let displayName = res.data.name.charAt(0).toUpperCase() + res.data.name.slice(1);
                         setIsLoggedIn(displayName);
