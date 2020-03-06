@@ -10,6 +10,7 @@ router.route('/saveGameData').post((req, res) => {
                 //oh well
             } else if (player.result === 'win') {
                 const playersLeastTurns = user.leastTurnsForWin;
+                const newWinStreak = user.winStreak + 1;
                 if (player.turns < playersLeastTurns || playersLeastTurns === 0) {
                     User.updateOne({username: player.name}, {$set: {leastTurnsForWin: player.turns}})
                     .then(user => {
@@ -19,6 +20,15 @@ router.route('/saveGameData').post((req, res) => {
                         //oh well
                     });
                 };
+                if (newWinStreak > user.winStreakPeak) {
+                    User.updateOne({username: player.name}, {$set: {winStreakPeak: newWinStreak}})
+                    .then(user => {
+                        //woo hoo
+                    })
+                    .catch(err => {
+                        //oh well
+                    });
+                }
                 User.updateOne({username: player.name}, {$inc: {totalGamesPlayed: 1, totalGamesWon: 1, winStreak: 1}})
                 .then(user => {
                     //woo hoo

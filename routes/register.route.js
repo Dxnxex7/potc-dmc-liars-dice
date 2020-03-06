@@ -22,6 +22,7 @@ router.route('/').post(async (req, res) => {
         const totalGamesWon = Number(req.body.totalGamesWon);
         const totalGamesLost = Number(req.body.totalGamesLost);
         const winStreak = Number(req.body.winStreak);
+        const winStreakPeak = Number(req.body.winStreakPeak);
         const leastTurnsForWin = Number(req.body.leastTurnsForWin);
 
         //Create new user with the User model
@@ -34,6 +35,7 @@ router.route('/').post(async (req, res) => {
             totalGamesWon,
             totalGamesLost,
             winStreak,
+            winStreakPeak,
             leastTurnsForWin
         });
 

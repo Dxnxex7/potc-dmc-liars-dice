@@ -11,6 +11,7 @@ const userSchema = new Schema({
     totalGamesWon: {type: Number, required: true},
     totalGamesLost: {type: Number, required: true},
     winStreak: {type: Number, required: true},
+    winStreakPeak: {type: Number, required: true},
     leastTurnsForWin: {type: Number, required: true}
 }, {
     timestamps: true

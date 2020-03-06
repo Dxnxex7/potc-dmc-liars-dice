@@ -32,6 +32,7 @@ export default function Register({toHomePage, toLoginPage, setUserAccessToken, s
                 totalGamesWon: 0,
                 totalGamesLost: 0,
                 winStreak: 0,
+                winStreakPeak: 0,
                 leastTurnsForWin: 0
             };
             setUsername('');
