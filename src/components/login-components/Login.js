@@ -16,7 +16,7 @@ export default function Login({toHomePage, toRegisterPage, setUserAccessToken, s
                 usernameOrEmail: usernameOrEmail,
                 password: password,
             };
-            axios.post('http://localhost:3000/login/', newLogin, {withCredentials: true})
+            axios.post('https://pure-wildwood-93382.herokuapp.com/login/', newLogin, {withCredentials: true})
                 .then(res => {
                     if (res.data.accessToken) {
                         setUserAccessToken(res.data.accessToken);

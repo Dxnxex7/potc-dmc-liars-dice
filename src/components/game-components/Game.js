@@ -42,7 +42,7 @@ export default function Game({checkUserAuthorizationSlashGenerateNewAccessToken,
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
-        axios.post('http://localhost:3000/game/getGameChat', {username1: isLoggedIn.toLowerCase(), username2: opponentName.toLowerCase()})
+        axios.post('https://pure-wildwood-93382.herokuapp.com/game/getGameChat', {username1: isLoggedIn.toLowerCase(), username2: opponentName.toLowerCase()})
             .then(res => {
                 setGameChat(res.data);
             })
@@ -300,7 +300,7 @@ export default function Game({checkUserAuthorizationSlashGenerateNewAccessToken,
                 //update state
                 setGameChat([...gameChat, newChat]);
                 //save in chat database
-                axios.post('http://localhost:3000/game/saveGameChat', {username1: isLoggedIn.toLowerCase(), username2: opponentName.toLowerCase(), chats: newChat})
+                axios.post('https://pure-wildwood-93382.herokuapp.com/game/saveGameChat', {username1: isLoggedIn.toLowerCase(), username2: opponentName.toLowerCase(), chats: newChat})
                 .then(res => {
                     //yay
                 })

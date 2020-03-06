@@ -50,7 +50,7 @@ export default function Home({checkUserAuthorizationSlashGenerateNewAccessToken,
         logoutStates();
         setJoinButton(false);
         setJoinLobbyErrorText('');
-        axios.post('http://localhost:3000/auth/newAccessTokenOrLogout/', 'data lol', {withCredentials: true})
+        axios.post('https://pure-wildwood-93382.herokuapp.com/auth/newAccessTokenOrLogout/', 'data lol', {withCredentials: true})
             .then(res => {
                 //console.log(`successfully logged out!!!`);
             })
@@ -104,7 +104,7 @@ export default function Home({checkUserAuthorizationSlashGenerateNewAccessToken,
             //update state
             setLobbyChat([...lobbyChat, newChat]);
             //save in chat database
-            axios.post('http://localhost:3000/lobby/saveLobbyChat', {chats: newChat})
+            axios.post('https://pure-wildwood-93382.herokuapp.com/lobby/saveLobbyChat', {chats: newChat})
             .then(res => {
                 //yay
             })

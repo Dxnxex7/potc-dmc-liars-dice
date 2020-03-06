@@ -1,5 +1,5 @@
 import openSocket from 'socket.io-client';
-const socket = openSocket('https://thawing-brushlands-16002.herokuapp.com');
+const socket = openSocket('https://pure-wildwood-93382.herokuapp.com/');
 
 //Check for connection
 if (socket !== undefined) {

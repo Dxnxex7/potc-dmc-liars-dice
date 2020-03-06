@@ -27,7 +27,7 @@ export default function App() {
 
   //Check user logged in/out state on first render)
   useEffect(() => {
-    axios.get('http://localhost:3000/auth/newAccessTokenOrLogout', {withCredentials: true})
+    axios.get('https://pure-wildwood-93382.herokuapp.com/auth/newAccessTokenOrLogout', {withCredentials: true})
       .then(res => {
         setUserAccessToken(res.data.accessToken);
         let displayName = res.data.name.charAt(0).toUpperCase() + res.data.name.slice(1);
@@ -40,7 +40,7 @@ export default function App() {
 
   //Reusable function for checking user authorization (also accepts callback function)
   const checkUserAuthorizationSlashGenerateNewAccessToken = (callback) => {
-    axios.get('http://localhost:3000/auth/', {headers: {Authorization: 'Bearer ' + userAccessToken}})
+    axios.get('https://pure-wildwood-93382.herokuapp.com/auth/', {headers: {Authorization: 'Bearer ' + userAccessToken}})
       .then(res => {
         //console.log(`access token valid`);
         if (callback) {
@@ -48,7 +48,7 @@ export default function App() {
         };
       })
       .catch(err => {
-        axios.get('http://localhost:3000/auth/newAccessTokenOrLogout', {withCredentials: true})
+        axios.get('https://pure-wildwood-93382.herokuapp.com/auth/newAccessTokenOrLogout', {withCredentials: true})
         .then(res => {
           //console.log(`new access token set`);
           setUserAccessToken(res.data.accessToken);

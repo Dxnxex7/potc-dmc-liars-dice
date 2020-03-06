@@ -47,7 +47,7 @@ export default function Register({toHomePage, toLoginPage, setUserAccessToken, s
             emailRef.current.value = '';
             passwordRef.current.value = '';
             setErrorRegisterText(`Attempting to create account...`);
-            axios.post('http://localhost:3000/register/', newRegister, {withCredentials: true})
+            axios.post('https://pure-wildwood-93382.herokuapp.com/register/', newRegister, {withCredentials: true})
                 .then(res => {
                     if (res.data.accessToken) {
                         setUserAccessToken(res.data.accessToken);
@@ -88,7 +88,7 @@ export default function Register({toHomePage, toLoginPage, setUserAccessToken, s
             setErrorUsername('Your username must not be more than 12 characters long.');
         } else {
             const usernameToCheck = {username: usernameLC};
-            axios.post('http://localhost:3000/register/checkUsername', usernameToCheck)
+            axios.post('https://pure-wildwood-93382.herokuapp.com/register/checkUsername', usernameToCheck)
                 .then(res => {
                     if (res.data === `usernameDoesNotExist`) {
                         setAcceptUsername(true);
@@ -121,7 +121,7 @@ export default function Register({toHomePage, toLoginPage, setUserAccessToken, s
             setErrorEmail('Your email must be a valid email address.')
         } else {
             const emailToCheck = {email: emailLC};
-            axios.post('http://localhost:3000/register/checkEmail', emailToCheck)
+            axios.post('https://pure-wildwood-93382.herokuapp.com/register/checkEmail', emailToCheck)
                 .then(res => {
                     if (res.data === `emailDoesNotExist`) {
                         setAcceptEmail(true);

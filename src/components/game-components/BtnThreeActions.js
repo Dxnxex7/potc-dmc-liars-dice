@@ -120,7 +120,7 @@ export default function BtnThreeActions({checkUserAuthorizationSlashGenerateNewA
     };
 
     const saveFinalScoresToDatabase = (gameData) => {
-        axios.post('http://localhost:3000/game/saveGameData/', gameData)
+        axios.post('https://pure-wildwood-93382.herokuapp.com/game/saveGameData/', gameData)
         .then(res => {
             //console.log(`game data successfully saved!!!`);
             SocketAPI.emitGameDataSaved();

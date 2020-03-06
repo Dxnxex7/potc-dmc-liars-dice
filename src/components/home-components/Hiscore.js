@@ -52,7 +52,7 @@ export default function Hiscore({page}) {
     //GET HISCORE DATA ON FIRST RENDER AND EVERYTIME GAME DATA IS SAVED
     useEffect(() => {
         //console.log(`hiscore sort: ${hiscoreSort}`);
-        axios.get('http://localhost:3000/lobby/getHiscoreData')
+        axios.get('https://pure-wildwood-93382.herokuapp.com/lobby/getHiscoreData')
             .then(res => {
                 setHiscoreDataAll(res.data);
                 const dataToSort = res.data;
