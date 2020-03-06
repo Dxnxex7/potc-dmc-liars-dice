@@ -1,0 +1,1242 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.html {
+  font-size: 10px;
+}
+
+/********************* HOME PAGE *********************/
+.home-page {
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100px auto 100px;
+      grid-template-rows: 100px auto 100px;
+      grid-template-areas: "head" "main" "foot";
+}
+
+.home-page .home-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  background-color: #dfffdb;
+  display: -ms-grid;
+  display: grid;
+}
+
+.home-page .home-container .home-screen {
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 900px;
+  width: 1100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -ms-grid-rows: 1fr 5fr;
+      grid-template-rows: 1fr 5fr;
+      grid-template-areas: 'top top' 'hiscores chat';
+}
+
+.home-page .home-container .home-screen .lobby-main {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: top;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: 'play logo login';
+}
+
+.home-page .home-container .home-screen .lobby-main .play-area {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: play;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 3fr 2fr;
+      grid-template-rows: 3fr 2fr;
+      grid-template-areas: 'button' 'error';
+}
+
+.home-page .home-container .home-screen .lobby-main .play-area .join-button {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: button;
+  -ms-flex-item-align: end;
+      align-self: end;
+      justify-self: center;
+}
+
+.home-page .home-container .home-screen .lobby-main .play-area .join-button .btn-join-lobby, .home-page .home-container .home-screen .lobby-main .play-area .join-button .btn-leave-lobby {
+  font-size: 2rem;
+  width: 300px;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.home-page .home-container .home-screen .lobby-main .play-area .join-button .btn-join-lobby {
+  background-color: #afff81;
+  color: black;
+}
+
+.home-page .home-container .home-screen .lobby-main .play-area .join-button .btn-leave-lobby {
+  background-color: yellow;
+  color: black;
+}
+
+.home-page .home-container .home-screen .lobby-main .play-area .join-button .btn-join-lobby:hover {
+  background-color: #074e00;
+  color: white;
+}
+
+.home-page .home-container .home-screen .lobby-main .play-area .join-button .btn-leave-lobby:hover {
+  background-color: red;
+  color: white;
+}
+
+.home-page .home-container .home-screen .lobby-main .play-area .join-error-text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: error;
+  -ms-flex-item-align: start;
+      align-self: start;
+      justify-self: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.home-page .home-container .home-screen .lobby-main .logo-area {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: logo;
+}
+
+.home-page .home-container .home-screen .lobby-main .logo-area .logo-home {
+  height: 135px;
+  margin-top: 8px;
+  margin-left: 18px;
+}
+
+.home-page .home-container .home-screen .lobby-main .login-area {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: login;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 3fr 2fr;
+      grid-template-rows: 3fr 2fr;
+      grid-template-areas: 'error' 'button';
+}
+
+.home-page .home-container .home-screen .lobby-main .login-area .login-text {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: button;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.home-page .home-container .home-screen .lobby-main .login-area .login-button {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: error;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.home-page .home-container .home-screen .lobby-main .login-area .login-button .btn-login, .home-page .home-container .home-screen .lobby-main .login-area .login-button .btn-logout {
+  font-size: 2rem;
+  width: 300px;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.home-page .home-container .home-screen .lobby-main .login-area .login-button .btn-login {
+  background-color: #afff81;
+  color: black;
+}
+
+.home-page .home-container .home-screen .lobby-main .login-area .login-button .btn-logout {
+  background-color: yellow;
+  color: black;
+}
+
+.home-page .home-container .home-screen .lobby-main .login-area .login-button .btn-login:hover {
+  background-color: #074e00;
+  color: white;
+}
+
+.home-page .home-container .home-screen .lobby-main .login-area .login-button .btn-logout:hover {
+  background-color: red;
+  color: white;
+}
+
+.home-page .home-container .home-screen .hiscore-table {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: hiscores;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-left: 20px;
+}
+
+.home-page .home-container .home-screen .hiscore-table .hiscore-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #074e00;
+  margin-bottom: 10px;
+}
+
+.home-page .home-container .home-screen .hiscore-table table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  height: 650px;
+}
+
+.home-page .home-container .home-screen .hiscore-table table tbody tr th {
+  border: 1px solid black;
+  background-color: #beff98;
+  color: black;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.home-page .home-container .home-screen .hiscore-table table tbody tr th.no-sort-header {
+  cursor: default;
+}
+
+.home-page .home-container .home-screen .hiscore-table table tbody tr th.normal:hover, .home-page .home-container .home-screen .hiscore-table table tbody tr th.sortBy:hover, .home-page .home-container .home-screen .hiscore-table table tbody tr th.normal:active, .home-page .home-container .home-screen .hiscore-table table tbody tr th.sortBy:active {
+  background-color: #074e00;
+  color: white;
+}
+
+.home-page .home-container .home-screen .hiscore-table table tbody tr td {
+  width: 115px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 1.1rem;
+  cursor: default;
+}
+
+.home-page .home-container .home-screen .hiscore-table table tbody tr td.sortBy {
+  background-color: #074e00;
+  color: white;
+}
+
+.home-page .home-container .home-screen .hiscore-table table tbody tr:nth-child(odd) {
+  background-color: #aaebaf;
+}
+
+.home-page .home-container .home-screen .hiscore-table table tbody tr:nth-child(even) {
+  background-color: #dfffdb;
+}
+
+.home-page .home-container .home-screen .hiscore-table table tr:hover td.sortBy, .home-page .home-container .home-screen .hiscore-table table tr:hover td.normal {
+  background-color: #074e00;
+  color: white;
+}
+
+.home-page .home-container .home-screen .lobby-chat {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: chat;
+  background-color: yellow;
+  height: 652px;
+  margin: 68px 20px 0 20px;
+  padding: 10px;
+  background-color: #aaebaf;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.home-page .home-container .home-screen .lobby-chat .chat-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages {
+  height: 525px;
+  width: 320px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  scrollbar-color: #074e00 #aaebaf;
+  word-wrap: break-word;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages ::-webkit-scrollbar-track {
+  border: none;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages .lobby-chat-message {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: flex-start;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages .lobby-chat-message .message-from {
+  font-weight: bold;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages .lobby-chat-message .message-content {
+  padding-right: 10px;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages .lobby-chat-message:hover {
+  background-color: #dfffdb;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages .user-color {
+  background-color: white;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages .other-color {
+  background-color: #ebebeb;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages .empty-div {
+  height: 0;
+  width: 0;
+}
+
+.home-page .home-container .home-screen .lobby-chat .all-chat-messages div:last-of-type {
+  margin-bottom: 0;
+}
+
+.home-page .home-container .home-screen .lobby-chat .lobby-chat-input {
+  margin: 10px 5px 5px 5px;
+  padding: 3px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.home-page .home-container .home-screen .lobby-chat .lobby-chat-input:hover {
+  background-color: #f7f7f7;
+}
+
+.home-page .home-container .home-screen .lobby-chat .lobby-chat-input:focus {
+  background-color: #f0f0f0;
+}
+
+.home-page .home-container .home-screen .lobby-chat .lobby-chat-button {
+  width: 55px;
+  height: 25px;
+  font-size: 0.9rem;
+  padding-top: 1px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.home-page .home-container .home-screen .lobby-chat .lobby-chat-button:hover {
+  background-color: #f7f7f7;
+}
+
+.home-page .home-container .home-screen .lobby-chat .lobby-chat-button:active {
+  background-color: #f0f0f0;
+}
+
+.home-page .header-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: head;
+}
+
+.home-page .footer-container {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: foot;
+}
+
+/********************* REGISTER AND LOGIN PAGES *********************/
+.login-page, .register-page {
+  background-image: url("images/davy-jones-bill-nighy.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100px auto 100px;
+      grid-template-rows: 100px auto 100px;
+      grid-template-areas: "head" "form" "foot";
+}
+
+.login-page .register-section, .login-page .login-section, .register-page .register-section, .register-page .login-section {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: form;
+}
+
+.login-page .register-section .register-form, .login-page .register-section .login-form, .login-page .login-section .register-form, .login-page .login-section .login-form, .register-page .register-section .register-form, .register-page .register-section .login-form, .register-page .login-section .register-form, .register-page .login-section .login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 3px solid green;
+  border-radius: 10px;
+  background-color: rgba(65, 133, 56, 0.582);
+  height: 650px;
+  width: 50%;
+  max-width: 500px;
+  min-width: 500px;
+}
+
+.login-page .register-section .register-form .register-title, .login-page .register-section .register-form .login-title, .login-page .register-section .login-form .register-title, .login-page .register-section .login-form .login-title, .login-page .login-section .register-form .register-title, .login-page .login-section .register-form .login-title, .login-page .login-section .login-form .register-title, .login-page .login-section .login-form .login-title, .register-page .register-section .register-form .register-title, .register-page .register-section .register-form .login-title, .register-page .register-section .login-form .register-title, .register-page .register-section .login-form .login-title, .register-page .login-section .register-form .register-title, .register-page .login-section .register-form .login-title, .register-page .login-section .login-form .register-title, .register-page .login-section .login-form .login-title {
+  margin: 30px 50px 30px 50px;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.login-page .register-section .register-form .register-input-group, .login-page .register-section .register-form .login-input-group, .login-page .register-section .login-form .register-input-group, .login-page .register-section .login-form .login-input-group, .login-page .login-section .register-form .register-input-group, .login-page .login-section .register-form .login-input-group, .login-page .login-section .login-form .register-input-group, .login-page .login-section .login-form .login-input-group, .register-page .register-section .register-form .register-input-group, .register-page .register-section .register-form .login-input-group, .register-page .register-section .login-form .register-input-group, .register-page .register-section .login-form .login-input-group, .register-page .login-section .register-form .register-input-group, .register-page .login-section .register-form .login-input-group, .register-page .login-section .login-form .register-input-group, .register-page .login-section .login-form .login-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-page .register-section .register-form .register-input-group .register-subtitle, .login-page .register-section .register-form .register-input-group .login-subtitle, .login-page .register-section .register-form .login-input-group .register-subtitle, .login-page .register-section .register-form .login-input-group .login-subtitle, .login-page .register-section .login-form .register-input-group .register-subtitle, .login-page .register-section .login-form .register-input-group .login-subtitle, .login-page .register-section .login-form .login-input-group .register-subtitle, .login-page .register-section .login-form .login-input-group .login-subtitle, .login-page .login-section .register-form .register-input-group .register-subtitle, .login-page .login-section .register-form .register-input-group .login-subtitle, .login-page .login-section .register-form .login-input-group .register-subtitle, .login-page .login-section .register-form .login-input-group .login-subtitle, .login-page .login-section .login-form .register-input-group .register-subtitle, .login-page .login-section .login-form .register-input-group .login-subtitle, .login-page .login-section .login-form .login-input-group .register-subtitle, .login-page .login-section .login-form .login-input-group .login-subtitle, .register-page .register-section .register-form .register-input-group .register-subtitle, .register-page .register-section .register-form .register-input-group .login-subtitle, .register-page .register-section .register-form .login-input-group .register-subtitle, .register-page .register-section .register-form .login-input-group .login-subtitle, .register-page .register-section .login-form .register-input-group .register-subtitle, .register-page .register-section .login-form .register-input-group .login-subtitle, .register-page .register-section .login-form .login-input-group .register-subtitle, .register-page .register-section .login-form .login-input-group .login-subtitle, .register-page .login-section .register-form .register-input-group .register-subtitle, .register-page .login-section .register-form .register-input-group .login-subtitle, .register-page .login-section .register-form .login-input-group .register-subtitle, .register-page .login-section .register-form .login-input-group .login-subtitle, .register-page .login-section .login-form .register-input-group .register-subtitle, .register-page .login-section .login-form .register-input-group .login-subtitle, .register-page .login-section .login-form .login-input-group .register-subtitle, .register-page .login-section .login-form .login-input-group .login-subtitle {
+  margin: 0 50px 5px 50px;
+  text-align: left;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.login-page .register-section .register-form .register-input-group .register-field, .login-page .register-section .register-form .register-input-group .login-field, .login-page .register-section .register-form .login-input-group .register-field, .login-page .register-section .register-form .login-input-group .login-field, .login-page .register-section .login-form .register-input-group .register-field, .login-page .register-section .login-form .register-input-group .login-field, .login-page .register-section .login-form .login-input-group .register-field, .login-page .register-section .login-form .login-input-group .login-field, .login-page .login-section .register-form .register-input-group .register-field, .login-page .login-section .register-form .register-input-group .login-field, .login-page .login-section .register-form .login-input-group .register-field, .login-page .login-section .register-form .login-input-group .login-field, .login-page .login-section .login-form .register-input-group .register-field, .login-page .login-section .login-form .register-input-group .login-field, .login-page .login-section .login-form .login-input-group .register-field, .login-page .login-section .login-form .login-input-group .login-field, .register-page .register-section .register-form .register-input-group .register-field, .register-page .register-section .register-form .register-input-group .login-field, .register-page .register-section .register-form .login-input-group .register-field, .register-page .register-section .register-form .login-input-group .login-field, .register-page .register-section .login-form .register-input-group .register-field, .register-page .register-section .login-form .register-input-group .login-field, .register-page .register-section .login-form .login-input-group .register-field, .register-page .register-section .login-form .login-input-group .login-field, .register-page .login-section .register-form .register-input-group .register-field, .register-page .login-section .register-form .register-input-group .login-field, .register-page .login-section .register-form .login-input-group .register-field, .register-page .login-section .register-form .login-input-group .login-field, .register-page .login-section .login-form .register-input-group .register-field, .register-page .login-section .login-form .register-input-group .login-field, .register-page .login-section .login-form .login-input-group .register-field, .register-page .login-section .login-form .login-input-group .login-field {
+  margin: 0 50px 2px 50px;
+  height: 2rem;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: rgba(189, 255, 194, 0.6);
+  color: black;
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+.login-page .register-section .register-form .register-input-group .login-field, .login-page .register-section .register-form .login-input-group .login-field, .login-page .register-section .login-form .register-input-group .login-field, .login-page .register-section .login-form .login-input-group .login-field, .login-page .login-section .register-form .register-input-group .login-field, .login-page .login-section .register-form .login-input-group .login-field, .login-page .login-section .login-form .register-input-group .login-field, .login-page .login-section .login-form .login-input-group .login-field, .register-page .register-section .register-form .register-input-group .login-field, .register-page .register-section .register-form .login-input-group .login-field, .register-page .register-section .login-form .register-input-group .login-field, .register-page .register-section .login-form .login-input-group .login-field, .register-page .login-section .register-form .register-input-group .login-field, .register-page .login-section .register-form .login-input-group .login-field, .register-page .login-section .login-form .register-input-group .login-field, .register-page .login-section .login-form .login-input-group .login-field {
+  margin-bottom: 20px;
+}
+
+.login-page .register-section .register-form .register-input-group .register-field:hover, .login-page .register-section .register-form .register-input-group .login-field:hover, .login-page .register-section .register-form .login-input-group .register-field:hover, .login-page .register-section .register-form .login-input-group .login-field:hover, .login-page .register-section .login-form .register-input-group .register-field:hover, .login-page .register-section .login-form .register-input-group .login-field:hover, .login-page .register-section .login-form .login-input-group .register-field:hover, .login-page .register-section .login-form .login-input-group .login-field:hover, .login-page .login-section .register-form .register-input-group .register-field:hover, .login-page .login-section .register-form .register-input-group .login-field:hover, .login-page .login-section .register-form .login-input-group .register-field:hover, .login-page .login-section .register-form .login-input-group .login-field:hover, .login-page .login-section .login-form .register-input-group .register-field:hover, .login-page .login-section .login-form .register-input-group .login-field:hover, .login-page .login-section .login-form .login-input-group .register-field:hover, .login-page .login-section .login-form .login-input-group .login-field:hover, .register-page .register-section .register-form .register-input-group .register-field:hover, .register-page .register-section .register-form .register-input-group .login-field:hover, .register-page .register-section .register-form .login-input-group .register-field:hover, .register-page .register-section .register-form .login-input-group .login-field:hover, .register-page .register-section .login-form .register-input-group .register-field:hover, .register-page .register-section .login-form .register-input-group .login-field:hover, .register-page .register-section .login-form .login-input-group .register-field:hover, .register-page .register-section .login-form .login-input-group .login-field:hover, .register-page .login-section .register-form .register-input-group .register-field:hover, .register-page .login-section .register-form .register-input-group .login-field:hover, .register-page .login-section .register-form .login-input-group .register-field:hover, .register-page .login-section .register-form .login-input-group .login-field:hover, .register-page .login-section .login-form .register-input-group .register-field:hover, .register-page .login-section .login-form .register-input-group .login-field:hover, .register-page .login-section .login-form .login-input-group .register-field:hover, .register-page .login-section .login-form .login-input-group .login-field:hover {
+  background-color: rgba(148, 255, 157, 0.6);
+}
+
+.login-page .register-section .register-form .register-input-group .register-field:focus, .login-page .register-section .register-form .register-input-group .login-field:focus, .login-page .register-section .register-form .login-input-group .register-field:focus, .login-page .register-section .register-form .login-input-group .login-field:focus, .login-page .register-section .login-form .register-input-group .register-field:focus, .login-page .register-section .login-form .register-input-group .login-field:focus, .login-page .register-section .login-form .login-input-group .register-field:focus, .login-page .register-section .login-form .login-input-group .login-field:focus, .login-page .login-section .register-form .register-input-group .register-field:focus, .login-page .login-section .register-form .register-input-group .login-field:focus, .login-page .login-section .register-form .login-input-group .register-field:focus, .login-page .login-section .register-form .login-input-group .login-field:focus, .login-page .login-section .login-form .register-input-group .register-field:focus, .login-page .login-section .login-form .register-input-group .login-field:focus, .login-page .login-section .login-form .login-input-group .register-field:focus, .login-page .login-section .login-form .login-input-group .login-field:focus, .register-page .register-section .register-form .register-input-group .register-field:focus, .register-page .register-section .register-form .register-input-group .login-field:focus, .register-page .register-section .register-form .login-input-group .register-field:focus, .register-page .register-section .register-form .login-input-group .login-field:focus, .register-page .register-section .login-form .register-input-group .register-field:focus, .register-page .register-section .login-form .register-input-group .login-field:focus, .register-page .register-section .login-form .login-input-group .register-field:focus, .register-page .register-section .login-form .login-input-group .login-field:focus, .register-page .login-section .register-form .register-input-group .register-field:focus, .register-page .login-section .register-form .register-input-group .login-field:focus, .register-page .login-section .register-form .login-input-group .register-field:focus, .register-page .login-section .register-form .login-input-group .login-field:focus, .register-page .login-section .login-form .register-input-group .register-field:focus, .register-page .login-section .login-form .register-input-group .login-field:focus, .register-page .login-section .login-form .login-input-group .register-field:focus, .register-page .login-section .login-form .login-input-group .login-field:focus {
+  background-color: rgba(97, 255, 110, 0.6);
+}
+
+.login-page .register-section .register-form .register-input-group .register-error-username-deny, .login-page .register-section .register-form .register-input-group .register-error-email-deny, .login-page .register-section .register-form .register-input-group .register-error-password-deny, .login-page .register-section .register-form .login-input-group .register-error-username-deny, .login-page .register-section .register-form .login-input-group .register-error-email-deny, .login-page .register-section .register-form .login-input-group .register-error-password-deny, .login-page .register-section .login-form .register-input-group .register-error-username-deny, .login-page .register-section .login-form .register-input-group .register-error-email-deny, .login-page .register-section .login-form .register-input-group .register-error-password-deny, .login-page .register-section .login-form .login-input-group .register-error-username-deny, .login-page .register-section .login-form .login-input-group .register-error-email-deny, .login-page .register-section .login-form .login-input-group .register-error-password-deny, .login-page .login-section .register-form .register-input-group .register-error-username-deny, .login-page .login-section .register-form .register-input-group .register-error-email-deny, .login-page .login-section .register-form .register-input-group .register-error-password-deny, .login-page .login-section .register-form .login-input-group .register-error-username-deny, .login-page .login-section .register-form .login-input-group .register-error-email-deny, .login-page .login-section .register-form .login-input-group .register-error-password-deny, .login-page .login-section .login-form .register-input-group .register-error-username-deny, .login-page .login-section .login-form .register-input-group .register-error-email-deny, .login-page .login-section .login-form .register-input-group .register-error-password-deny, .login-page .login-section .login-form .login-input-group .register-error-username-deny, .login-page .login-section .login-form .login-input-group .register-error-email-deny, .login-page .login-section .login-form .login-input-group .register-error-password-deny, .register-page .register-section .register-form .register-input-group .register-error-username-deny, .register-page .register-section .register-form .register-input-group .register-error-email-deny, .register-page .register-section .register-form .register-input-group .register-error-password-deny, .register-page .register-section .register-form .login-input-group .register-error-username-deny, .register-page .register-section .register-form .login-input-group .register-error-email-deny, .register-page .register-section .register-form .login-input-group .register-error-password-deny, .register-page .register-section .login-form .register-input-group .register-error-username-deny, .register-page .register-section .login-form .register-input-group .register-error-email-deny, .register-page .register-section .login-form .register-input-group .register-error-password-deny, .register-page .register-section .login-form .login-input-group .register-error-username-deny, .register-page .register-section .login-form .login-input-group .register-error-email-deny, .register-page .register-section .login-form .login-input-group .register-error-password-deny, .register-page .login-section .register-form .register-input-group .register-error-username-deny, .register-page .login-section .register-form .register-input-group .register-error-email-deny, .register-page .login-section .register-form .register-input-group .register-error-password-deny, .register-page .login-section .register-form .login-input-group .register-error-username-deny, .register-page .login-section .register-form .login-input-group .register-error-email-deny, .register-page .login-section .register-form .login-input-group .register-error-password-deny, .register-page .login-section .login-form .register-input-group .register-error-username-deny, .register-page .login-section .login-form .register-input-group .register-error-email-deny, .register-page .login-section .login-form .register-input-group .register-error-password-deny, .register-page .login-section .login-form .login-input-group .register-error-username-deny, .register-page .login-section .login-form .login-input-group .register-error-email-deny, .register-page .login-section .login-form .login-input-group .register-error-password-deny {
+  color: #ffa9a9;
+}
+
+.login-page .register-section .register-form .register-input-group .register-error-username-accept, .login-page .register-section .register-form .register-input-group .register-error-email-accept, .login-page .register-section .register-form .register-input-group .register-error-password-accept, .login-page .register-section .register-form .login-input-group .register-error-username-accept, .login-page .register-section .register-form .login-input-group .register-error-email-accept, .login-page .register-section .register-form .login-input-group .register-error-password-accept, .login-page .register-section .login-form .register-input-group .register-error-username-accept, .login-page .register-section .login-form .register-input-group .register-error-email-accept, .login-page .register-section .login-form .register-input-group .register-error-password-accept, .login-page .register-section .login-form .login-input-group .register-error-username-accept, .login-page .register-section .login-form .login-input-group .register-error-email-accept, .login-page .register-section .login-form .login-input-group .register-error-password-accept, .login-page .login-section .register-form .register-input-group .register-error-username-accept, .login-page .login-section .register-form .register-input-group .register-error-email-accept, .login-page .login-section .register-form .register-input-group .register-error-password-accept, .login-page .login-section .register-form .login-input-group .register-error-username-accept, .login-page .login-section .register-form .login-input-group .register-error-email-accept, .login-page .login-section .register-form .login-input-group .register-error-password-accept, .login-page .login-section .login-form .register-input-group .register-error-username-accept, .login-page .login-section .login-form .register-input-group .register-error-email-accept, .login-page .login-section .login-form .register-input-group .register-error-password-accept, .login-page .login-section .login-form .login-input-group .register-error-username-accept, .login-page .login-section .login-form .login-input-group .register-error-email-accept, .login-page .login-section .login-form .login-input-group .register-error-password-accept, .register-page .register-section .register-form .register-input-group .register-error-username-accept, .register-page .register-section .register-form .register-input-group .register-error-email-accept, .register-page .register-section .register-form .register-input-group .register-error-password-accept, .register-page .register-section .register-form .login-input-group .register-error-username-accept, .register-page .register-section .register-form .login-input-group .register-error-email-accept, .register-page .register-section .register-form .login-input-group .register-error-password-accept, .register-page .register-section .login-form .register-input-group .register-error-username-accept, .register-page .register-section .login-form .register-input-group .register-error-email-accept, .register-page .register-section .login-form .register-input-group .register-error-password-accept, .register-page .register-section .login-form .login-input-group .register-error-username-accept, .register-page .register-section .login-form .login-input-group .register-error-email-accept, .register-page .register-section .login-form .login-input-group .register-error-password-accept, .register-page .login-section .register-form .register-input-group .register-error-username-accept, .register-page .login-section .register-form .register-input-group .register-error-email-accept, .register-page .login-section .register-form .register-input-group .register-error-password-accept, .register-page .login-section .register-form .login-input-group .register-error-username-accept, .register-page .login-section .register-form .login-input-group .register-error-email-accept, .register-page .login-section .register-form .login-input-group .register-error-password-accept, .register-page .login-section .login-form .register-input-group .register-error-username-accept, .register-page .login-section .login-form .register-input-group .register-error-email-accept, .register-page .login-section .login-form .register-input-group .register-error-password-accept, .register-page .login-section .login-form .login-input-group .register-error-username-accept, .register-page .login-section .login-form .login-input-group .register-error-email-accept, .register-page .login-section .login-form .login-input-group .register-error-password-accept {
+  color: #a9ffc6;
+}
+
+.login-page .register-section .register-form .register-input-group div, .login-page .register-section .register-form .login-input-group div, .login-page .register-section .login-form .register-input-group div, .login-page .register-section .login-form .login-input-group div, .login-page .login-section .register-form .register-input-group div, .login-page .login-section .register-form .login-input-group div, .login-page .login-section .login-form .register-input-group div, .login-page .login-section .login-form .login-input-group div, .register-page .register-section .register-form .register-input-group div, .register-page .register-section .register-form .login-input-group div, .register-page .register-section .login-form .register-input-group div, .register-page .register-section .login-form .login-input-group div, .register-page .login-section .register-form .register-input-group div, .register-page .login-section .register-form .login-input-group div, .register-page .login-section .login-form .register-input-group div, .register-page .login-section .login-form .login-input-group div {
+  margin: 0 50px 10px 50px;
+  height: 20px;
+}
+
+.login-page .register-section .register-form .register-input-group .register-submit, .login-page .register-section .register-form .register-input-group .login-submit, .login-page .register-section .register-form .login-input-group .register-submit, .login-page .register-section .register-form .login-input-group .login-submit, .login-page .register-section .login-form .register-input-group .register-submit, .login-page .register-section .login-form .register-input-group .login-submit, .login-page .register-section .login-form .login-input-group .register-submit, .login-page .register-section .login-form .login-input-group .login-submit, .login-page .login-section .register-form .register-input-group .register-submit, .login-page .login-section .register-form .register-input-group .login-submit, .login-page .login-section .register-form .login-input-group .register-submit, .login-page .login-section .register-form .login-input-group .login-submit, .login-page .login-section .login-form .register-input-group .register-submit, .login-page .login-section .login-form .register-input-group .login-submit, .login-page .login-section .login-form .login-input-group .register-submit, .login-page .login-section .login-form .login-input-group .login-submit, .register-page .register-section .register-form .register-input-group .register-submit, .register-page .register-section .register-form .register-input-group .login-submit, .register-page .register-section .register-form .login-input-group .register-submit, .register-page .register-section .register-form .login-input-group .login-submit, .register-page .register-section .login-form .register-input-group .register-submit, .register-page .register-section .login-form .register-input-group .login-submit, .register-page .register-section .login-form .login-input-group .register-submit, .register-page .register-section .login-form .login-input-group .login-submit, .register-page .login-section .register-form .register-input-group .register-submit, .register-page .login-section .register-form .register-input-group .login-submit, .register-page .login-section .register-form .login-input-group .register-submit, .register-page .login-section .register-form .login-input-group .login-submit, .register-page .login-section .login-form .register-input-group .register-submit, .register-page .login-section .login-form .register-input-group .login-submit, .register-page .login-section .login-form .login-input-group .register-submit, .register-page .login-section .login-form .login-input-group .login-submit {
+  background-color: rgba(0, 255, 21, 0.6);
+  color: white;
+  margin: 10px 50px 2px 50px;
+  height: 2.7rem;
+  font-size: 1.5rem;
+}
+
+.login-page .register-section .register-form .register-input-group .register-submit, .login-page .register-section .register-form .register-input-group .login-submit, .login-page .register-section .register-form .register-input-group .register-btn-to-login, .login-page .register-section .register-form .register-input-group .register-btn-to-home, .login-page .register-section .register-form .register-input-group .login-btn-to-register, .login-page .register-section .register-form .register-input-group .login-btn-to-home, .login-page .register-section .register-form .login-input-group .register-submit, .login-page .register-section .register-form .login-input-group .login-submit, .login-page .register-section .register-form .login-input-group .register-btn-to-login, .login-page .register-section .register-form .login-input-group .register-btn-to-home, .login-page .register-section .register-form .login-input-group .login-btn-to-register, .login-page .register-section .register-form .login-input-group .login-btn-to-home, .login-page .register-section .login-form .register-input-group .register-submit, .login-page .register-section .login-form .register-input-group .login-submit, .login-page .register-section .login-form .register-input-group .register-btn-to-login, .login-page .register-section .login-form .register-input-group .register-btn-to-home, .login-page .register-section .login-form .register-input-group .login-btn-to-register, .login-page .register-section .login-form .register-input-group .login-btn-to-home, .login-page .register-section .login-form .login-input-group .register-submit, .login-page .register-section .login-form .login-input-group .login-submit, .login-page .register-section .login-form .login-input-group .register-btn-to-login, .login-page .register-section .login-form .login-input-group .register-btn-to-home, .login-page .register-section .login-form .login-input-group .login-btn-to-register, .login-page .register-section .login-form .login-input-group .login-btn-to-home, .login-page .login-section .register-form .register-input-group .register-submit, .login-page .login-section .register-form .register-input-group .login-submit, .login-page .login-section .register-form .register-input-group .register-btn-to-login, .login-page .login-section .register-form .register-input-group .register-btn-to-home, .login-page .login-section .register-form .register-input-group .login-btn-to-register, .login-page .login-section .register-form .register-input-group .login-btn-to-home, .login-page .login-section .register-form .login-input-group .register-submit, .login-page .login-section .register-form .login-input-group .login-submit, .login-page .login-section .register-form .login-input-group .register-btn-to-login, .login-page .login-section .register-form .login-input-group .register-btn-to-home, .login-page .login-section .register-form .login-input-group .login-btn-to-register, .login-page .login-section .register-form .login-input-group .login-btn-to-home, .login-page .login-section .login-form .register-input-group .register-submit, .login-page .login-section .login-form .register-input-group .login-submit, .login-page .login-section .login-form .register-input-group .register-btn-to-login, .login-page .login-section .login-form .register-input-group .register-btn-to-home, .login-page .login-section .login-form .register-input-group .login-btn-to-register, .login-page .login-section .login-form .register-input-group .login-btn-to-home, .login-page .login-section .login-form .login-input-group .register-submit, .login-page .login-section .login-form .login-input-group .login-submit, .login-page .login-section .login-form .login-input-group .register-btn-to-login, .login-page .login-section .login-form .login-input-group .register-btn-to-home, .login-page .login-section .login-form .login-input-group .login-btn-to-register, .login-page .login-section .login-form .login-input-group .login-btn-to-home, .register-page .register-section .register-form .register-input-group .register-submit, .register-page .register-section .register-form .register-input-group .login-submit, .register-page .register-section .register-form .register-input-group .register-btn-to-login, .register-page .register-section .register-form .register-input-group .register-btn-to-home, .register-page .register-section .register-form .register-input-group .login-btn-to-register, .register-page .register-section .register-form .register-input-group .login-btn-to-home, .register-page .register-section .register-form .login-input-group .register-submit, .register-page .register-section .register-form .login-input-group .login-submit, .register-page .register-section .register-form .login-input-group .register-btn-to-login, .register-page .register-section .register-form .login-input-group .register-btn-to-home, .register-page .register-section .register-form .login-input-group .login-btn-to-register, .register-page .register-section .register-form .login-input-group .login-btn-to-home, .register-page .register-section .login-form .register-input-group .register-submit, .register-page .register-section .login-form .register-input-group .login-submit, .register-page .register-section .login-form .register-input-group .register-btn-to-login, .register-page .register-section .login-form .register-input-group .register-btn-to-home, .register-page .register-section .login-form .register-input-group .login-btn-to-register, .register-page .register-section .login-form .register-input-group .login-btn-to-home, .register-page .register-section .login-form .login-input-group .register-submit, .register-page .register-section .login-form .login-input-group .login-submit, .register-page .register-section .login-form .login-input-group .register-btn-to-login, .register-page .register-section .login-form .login-input-group .register-btn-to-home, .register-page .register-section .login-form .login-input-group .login-btn-to-register, .register-page .register-section .login-form .login-input-group .login-btn-to-home, .register-page .login-section .register-form .register-input-group .register-submit, .register-page .login-section .register-form .register-input-group .login-submit, .register-page .login-section .register-form .register-input-group .register-btn-to-login, .register-page .login-section .register-form .register-input-group .register-btn-to-home, .register-page .login-section .register-form .register-input-group .login-btn-to-register, .register-page .login-section .register-form .register-input-group .login-btn-to-home, .register-page .login-section .register-form .login-input-group .register-submit, .register-page .login-section .register-form .login-input-group .login-submit, .register-page .login-section .register-form .login-input-group .register-btn-to-login, .register-page .login-section .register-form .login-input-group .register-btn-to-home, .register-page .login-section .register-form .login-input-group .login-btn-to-register, .register-page .login-section .register-form .login-input-group .login-btn-to-home, .register-page .login-section .login-form .register-input-group .register-submit, .register-page .login-section .login-form .register-input-group .login-submit, .register-page .login-section .login-form .register-input-group .register-btn-to-login, .register-page .login-section .login-form .register-input-group .register-btn-to-home, .register-page .login-section .login-form .register-input-group .login-btn-to-register, .register-page .login-section .login-form .register-input-group .login-btn-to-home, .register-page .login-section .login-form .login-input-group .register-submit, .register-page .login-section .login-form .login-input-group .login-submit, .register-page .login-section .login-form .login-input-group .register-btn-to-login, .register-page .login-section .login-form .login-input-group .register-btn-to-home, .register-page .login-section .login-form .login-input-group .login-btn-to-register, .register-page .login-section .login-form .login-input-group .login-btn-to-home {
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+.login-page .register-section .register-form .register-input-group .register-submit:hover, .login-page .register-section .register-form .register-input-group .login-submit:hover, .login-page .register-section .register-form .register-input-group .register-btn-to-login:hover, .login-page .register-section .register-form .register-input-group .register-btn-to-home:hover, .login-page .register-section .register-form .register-input-group .login-btn-to-register:hover, .login-page .register-section .register-form .register-input-group .login-btn-to-home:hover, .login-page .register-section .register-form .login-input-group .register-submit:hover, .login-page .register-section .register-form .login-input-group .login-submit:hover, .login-page .register-section .register-form .login-input-group .register-btn-to-login:hover, .login-page .register-section .register-form .login-input-group .register-btn-to-home:hover, .login-page .register-section .register-form .login-input-group .login-btn-to-register:hover, .login-page .register-section .register-form .login-input-group .login-btn-to-home:hover, .login-page .register-section .login-form .register-input-group .register-submit:hover, .login-page .register-section .login-form .register-input-group .login-submit:hover, .login-page .register-section .login-form .register-input-group .register-btn-to-login:hover, .login-page .register-section .login-form .register-input-group .register-btn-to-home:hover, .login-page .register-section .login-form .register-input-group .login-btn-to-register:hover, .login-page .register-section .login-form .register-input-group .login-btn-to-home:hover, .login-page .register-section .login-form .login-input-group .register-submit:hover, .login-page .register-section .login-form .login-input-group .login-submit:hover, .login-page .register-section .login-form .login-input-group .register-btn-to-login:hover, .login-page .register-section .login-form .login-input-group .register-btn-to-home:hover, .login-page .register-section .login-form .login-input-group .login-btn-to-register:hover, .login-page .register-section .login-form .login-input-group .login-btn-to-home:hover, .login-page .login-section .register-form .register-input-group .register-submit:hover, .login-page .login-section .register-form .register-input-group .login-submit:hover, .login-page .login-section .register-form .register-input-group .register-btn-to-login:hover, .login-page .login-section .register-form .register-input-group .register-btn-to-home:hover, .login-page .login-section .register-form .register-input-group .login-btn-to-register:hover, .login-page .login-section .register-form .register-input-group .login-btn-to-home:hover, .login-page .login-section .register-form .login-input-group .register-submit:hover, .login-page .login-section .register-form .login-input-group .login-submit:hover, .login-page .login-section .register-form .login-input-group .register-btn-to-login:hover, .login-page .login-section .register-form .login-input-group .register-btn-to-home:hover, .login-page .login-section .register-form .login-input-group .login-btn-to-register:hover, .login-page .login-section .register-form .login-input-group .login-btn-to-home:hover, .login-page .login-section .login-form .register-input-group .register-submit:hover, .login-page .login-section .login-form .register-input-group .login-submit:hover, .login-page .login-section .login-form .register-input-group .register-btn-to-login:hover, .login-page .login-section .login-form .register-input-group .register-btn-to-home:hover, .login-page .login-section .login-form .register-input-group .login-btn-to-register:hover, .login-page .login-section .login-form .register-input-group .login-btn-to-home:hover, .login-page .login-section .login-form .login-input-group .register-submit:hover, .login-page .login-section .login-form .login-input-group .login-submit:hover, .login-page .login-section .login-form .login-input-group .register-btn-to-login:hover, .login-page .login-section .login-form .login-input-group .register-btn-to-home:hover, .login-page .login-section .login-form .login-input-group .login-btn-to-register:hover, .login-page .login-section .login-form .login-input-group .login-btn-to-home:hover, .register-page .register-section .register-form .register-input-group .register-submit:hover, .register-page .register-section .register-form .register-input-group .login-submit:hover, .register-page .register-section .register-form .register-input-group .register-btn-to-login:hover, .register-page .register-section .register-form .register-input-group .register-btn-to-home:hover, .register-page .register-section .register-form .register-input-group .login-btn-to-register:hover, .register-page .register-section .register-form .register-input-group .login-btn-to-home:hover, .register-page .register-section .register-form .login-input-group .register-submit:hover, .register-page .register-section .register-form .login-input-group .login-submit:hover, .register-page .register-section .register-form .login-input-group .register-btn-to-login:hover, .register-page .register-section .register-form .login-input-group .register-btn-to-home:hover, .register-page .register-section .register-form .login-input-group .login-btn-to-register:hover, .register-page .register-section .register-form .login-input-group .login-btn-to-home:hover, .register-page .register-section .login-form .register-input-group .register-submit:hover, .register-page .register-section .login-form .register-input-group .login-submit:hover, .register-page .register-section .login-form .register-input-group .register-btn-to-login:hover, .register-page .register-section .login-form .register-input-group .register-btn-to-home:hover, .register-page .register-section .login-form .register-input-group .login-btn-to-register:hover, .register-page .register-section .login-form .register-input-group .login-btn-to-home:hover, .register-page .register-section .login-form .login-input-group .register-submit:hover, .register-page .register-section .login-form .login-input-group .login-submit:hover, .register-page .register-section .login-form .login-input-group .register-btn-to-login:hover, .register-page .register-section .login-form .login-input-group .register-btn-to-home:hover, .register-page .register-section .login-form .login-input-group .login-btn-to-register:hover, .register-page .register-section .login-form .login-input-group .login-btn-to-home:hover, .register-page .login-section .register-form .register-input-group .register-submit:hover, .register-page .login-section .register-form .register-input-group .login-submit:hover, .register-page .login-section .register-form .register-input-group .register-btn-to-login:hover, .register-page .login-section .register-form .register-input-group .register-btn-to-home:hover, .register-page .login-section .register-form .register-input-group .login-btn-to-register:hover, .register-page .login-section .register-form .register-input-group .login-btn-to-home:hover, .register-page .login-section .register-form .login-input-group .register-submit:hover, .register-page .login-section .register-form .login-input-group .login-submit:hover, .register-page .login-section .register-form .login-input-group .register-btn-to-login:hover, .register-page .login-section .register-form .login-input-group .register-btn-to-home:hover, .register-page .login-section .register-form .login-input-group .login-btn-to-register:hover, .register-page .login-section .register-form .login-input-group .login-btn-to-home:hover, .register-page .login-section .login-form .register-input-group .register-submit:hover, .register-page .login-section .login-form .register-input-group .login-submit:hover, .register-page .login-section .login-form .register-input-group .register-btn-to-login:hover, .register-page .login-section .login-form .register-input-group .register-btn-to-home:hover, .register-page .login-section .login-form .register-input-group .login-btn-to-register:hover, .register-page .login-section .login-form .register-input-group .login-btn-to-home:hover, .register-page .login-section .login-form .login-input-group .register-submit:hover, .register-page .login-section .login-form .login-input-group .login-submit:hover, .register-page .login-section .login-form .login-input-group .register-btn-to-login:hover, .register-page .login-section .login-form .login-input-group .register-btn-to-home:hover, .register-page .login-section .login-form .login-input-group .login-btn-to-register:hover, .register-page .login-section .login-form .login-input-group .login-btn-to-home:hover {
+  background-color: rgba(0, 230, 19, 0.6);
+  cursor: pointer;
+}
+
+.login-page .register-section .register-form .register-input-group .register-submit:active, .login-page .register-section .register-form .register-input-group .login-submit:active, .login-page .register-section .register-form .register-input-group .register-btn-to-login:active, .login-page .register-section .register-form .register-input-group .register-btn-to-home:active, .login-page .register-section .register-form .register-input-group .login-btn-to-register:active, .login-page .register-section .register-form .register-input-group .login-btn-to-home:active, .login-page .register-section .register-form .login-input-group .register-submit:active, .login-page .register-section .register-form .login-input-group .login-submit:active, .login-page .register-section .register-form .login-input-group .register-btn-to-login:active, .login-page .register-section .register-form .login-input-group .register-btn-to-home:active, .login-page .register-section .register-form .login-input-group .login-btn-to-register:active, .login-page .register-section .register-form .login-input-group .login-btn-to-home:active, .login-page .register-section .login-form .register-input-group .register-submit:active, .login-page .register-section .login-form .register-input-group .login-submit:active, .login-page .register-section .login-form .register-input-group .register-btn-to-login:active, .login-page .register-section .login-form .register-input-group .register-btn-to-home:active, .login-page .register-section .login-form .register-input-group .login-btn-to-register:active, .login-page .register-section .login-form .register-input-group .login-btn-to-home:active, .login-page .register-section .login-form .login-input-group .register-submit:active, .login-page .register-section .login-form .login-input-group .login-submit:active, .login-page .register-section .login-form .login-input-group .register-btn-to-login:active, .login-page .register-section .login-form .login-input-group .register-btn-to-home:active, .login-page .register-section .login-form .login-input-group .login-btn-to-register:active, .login-page .register-section .login-form .login-input-group .login-btn-to-home:active, .login-page .login-section .register-form .register-input-group .register-submit:active, .login-page .login-section .register-form .register-input-group .login-submit:active, .login-page .login-section .register-form .register-input-group .register-btn-to-login:active, .login-page .login-section .register-form .register-input-group .register-btn-to-home:active, .login-page .login-section .register-form .register-input-group .login-btn-to-register:active, .login-page .login-section .register-form .register-input-group .login-btn-to-home:active, .login-page .login-section .register-form .login-input-group .register-submit:active, .login-page .login-section .register-form .login-input-group .login-submit:active, .login-page .login-section .register-form .login-input-group .register-btn-to-login:active, .login-page .login-section .register-form .login-input-group .register-btn-to-home:active, .login-page .login-section .register-form .login-input-group .login-btn-to-register:active, .login-page .login-section .register-form .login-input-group .login-btn-to-home:active, .login-page .login-section .login-form .register-input-group .register-submit:active, .login-page .login-section .login-form .register-input-group .login-submit:active, .login-page .login-section .login-form .register-input-group .register-btn-to-login:active, .login-page .login-section .login-form .register-input-group .register-btn-to-home:active, .login-page .login-section .login-form .register-input-group .login-btn-to-register:active, .login-page .login-section .login-form .register-input-group .login-btn-to-home:active, .login-page .login-section .login-form .login-input-group .register-submit:active, .login-page .login-section .login-form .login-input-group .login-submit:active, .login-page .login-section .login-form .login-input-group .register-btn-to-login:active, .login-page .login-section .login-form .login-input-group .register-btn-to-home:active, .login-page .login-section .login-form .login-input-group .login-btn-to-register:active, .login-page .login-section .login-form .login-input-group .login-btn-to-home:active, .register-page .register-section .register-form .register-input-group .register-submit:active, .register-page .register-section .register-form .register-input-group .login-submit:active, .register-page .register-section .register-form .register-input-group .register-btn-to-login:active, .register-page .register-section .register-form .register-input-group .register-btn-to-home:active, .register-page .register-section .register-form .register-input-group .login-btn-to-register:active, .register-page .register-section .register-form .register-input-group .login-btn-to-home:active, .register-page .register-section .register-form .login-input-group .register-submit:active, .register-page .register-section .register-form .login-input-group .login-submit:active, .register-page .register-section .register-form .login-input-group .register-btn-to-login:active, .register-page .register-section .register-form .login-input-group .register-btn-to-home:active, .register-page .register-section .register-form .login-input-group .login-btn-to-register:active, .register-page .register-section .register-form .login-input-group .login-btn-to-home:active, .register-page .register-section .login-form .register-input-group .register-submit:active, .register-page .register-section .login-form .register-input-group .login-submit:active, .register-page .register-section .login-form .register-input-group .register-btn-to-login:active, .register-page .register-section .login-form .register-input-group .register-btn-to-home:active, .register-page .register-section .login-form .register-input-group .login-btn-to-register:active, .register-page .register-section .login-form .register-input-group .login-btn-to-home:active, .register-page .register-section .login-form .login-input-group .register-submit:active, .register-page .register-section .login-form .login-input-group .login-submit:active, .register-page .register-section .login-form .login-input-group .register-btn-to-login:active, .register-page .register-section .login-form .login-input-group .register-btn-to-home:active, .register-page .register-section .login-form .login-input-group .login-btn-to-register:active, .register-page .register-section .login-form .login-input-group .login-btn-to-home:active, .register-page .login-section .register-form .register-input-group .register-submit:active, .register-page .login-section .register-form .register-input-group .login-submit:active, .register-page .login-section .register-form .register-input-group .register-btn-to-login:active, .register-page .login-section .register-form .register-input-group .register-btn-to-home:active, .register-page .login-section .register-form .register-input-group .login-btn-to-register:active, .register-page .login-section .register-form .register-input-group .login-btn-to-home:active, .register-page .login-section .register-form .login-input-group .register-submit:active, .register-page .login-section .register-form .login-input-group .login-submit:active, .register-page .login-section .register-form .login-input-group .register-btn-to-login:active, .register-page .login-section .register-form .login-input-group .register-btn-to-home:active, .register-page .login-section .register-form .login-input-group .login-btn-to-register:active, .register-page .login-section .register-form .login-input-group .login-btn-to-home:active, .register-page .login-section .login-form .register-input-group .register-submit:active, .register-page .login-section .login-form .register-input-group .login-submit:active, .register-page .login-section .login-form .register-input-group .register-btn-to-login:active, .register-page .login-section .login-form .register-input-group .register-btn-to-home:active, .register-page .login-section .login-form .register-input-group .login-btn-to-register:active, .register-page .login-section .login-form .register-input-group .login-btn-to-home:active, .register-page .login-section .login-form .login-input-group .register-submit:active, .register-page .login-section .login-form .login-input-group .login-submit:active, .register-page .login-section .login-form .login-input-group .register-btn-to-login:active, .register-page .login-section .login-form .login-input-group .register-btn-to-home:active, .register-page .login-section .login-form .login-input-group .login-btn-to-register:active, .register-page .login-section .login-form .login-input-group .login-btn-to-home:active {
+  background-color: rgba(0, 163, 14, 0.6);
+}
+
+.login-page .register-section .register-form .register-input-group .register-submit-error, .login-page .register-section .register-form .register-input-group .login-submit-error, .login-page .register-section .register-form .login-input-group .register-submit-error, .login-page .register-section .register-form .login-input-group .login-submit-error, .login-page .register-section .login-form .register-input-group .register-submit-error, .login-page .register-section .login-form .register-input-group .login-submit-error, .login-page .register-section .login-form .login-input-group .register-submit-error, .login-page .register-section .login-form .login-input-group .login-submit-error, .login-page .login-section .register-form .register-input-group .register-submit-error, .login-page .login-section .register-form .register-input-group .login-submit-error, .login-page .login-section .register-form .login-input-group .register-submit-error, .login-page .login-section .register-form .login-input-group .login-submit-error, .login-page .login-section .login-form .register-input-group .register-submit-error, .login-page .login-section .login-form .register-input-group .login-submit-error, .login-page .login-section .login-form .login-input-group .register-submit-error, .login-page .login-section .login-form .login-input-group .login-submit-error, .register-page .register-section .register-form .register-input-group .register-submit-error, .register-page .register-section .register-form .register-input-group .login-submit-error, .register-page .register-section .register-form .login-input-group .register-submit-error, .register-page .register-section .register-form .login-input-group .login-submit-error, .register-page .register-section .login-form .register-input-group .register-submit-error, .register-page .register-section .login-form .register-input-group .login-submit-error, .register-page .register-section .login-form .login-input-group .register-submit-error, .register-page .register-section .login-form .login-input-group .login-submit-error, .register-page .login-section .register-form .register-input-group .register-submit-error, .register-page .login-section .register-form .register-input-group .login-submit-error, .register-page .login-section .register-form .login-input-group .register-submit-error, .register-page .login-section .register-form .login-input-group .login-submit-error, .register-page .login-section .login-form .register-input-group .register-submit-error, .register-page .login-section .login-form .register-input-group .login-submit-error, .register-page .login-section .login-form .login-input-group .register-submit-error, .register-page .login-section .login-form .login-input-group .login-submit-error {
+  margin: 0 50px 20px 50px;
+  color: #ffa9a9;
+  height: 40px;
+}
+
+.login-page .register-section .register-form .register-input-group .register-btn-to-login, .login-page .register-section .register-form .register-input-group .login-btn-to-register, .login-page .register-section .register-form .login-input-group .register-btn-to-login, .login-page .register-section .register-form .login-input-group .login-btn-to-register, .login-page .register-section .login-form .register-input-group .register-btn-to-login, .login-page .register-section .login-form .register-input-group .login-btn-to-register, .login-page .register-section .login-form .login-input-group .register-btn-to-login, .login-page .register-section .login-form .login-input-group .login-btn-to-register, .login-page .login-section .register-form .register-input-group .register-btn-to-login, .login-page .login-section .register-form .register-input-group .login-btn-to-register, .login-page .login-section .register-form .login-input-group .register-btn-to-login, .login-page .login-section .register-form .login-input-group .login-btn-to-register, .login-page .login-section .login-form .register-input-group .register-btn-to-login, .login-page .login-section .login-form .register-input-group .login-btn-to-register, .login-page .login-section .login-form .login-input-group .register-btn-to-login, .login-page .login-section .login-form .login-input-group .login-btn-to-register, .register-page .register-section .register-form .register-input-group .register-btn-to-login, .register-page .register-section .register-form .register-input-group .login-btn-to-register, .register-page .register-section .register-form .login-input-group .register-btn-to-login, .register-page .register-section .register-form .login-input-group .login-btn-to-register, .register-page .register-section .login-form .register-input-group .register-btn-to-login, .register-page .register-section .login-form .register-input-group .login-btn-to-register, .register-page .register-section .login-form .login-input-group .register-btn-to-login, .register-page .register-section .login-form .login-input-group .login-btn-to-register, .register-page .login-section .register-form .register-input-group .register-btn-to-login, .register-page .login-section .register-form .register-input-group .login-btn-to-register, .register-page .login-section .register-form .login-input-group .register-btn-to-login, .register-page .login-section .register-form .login-input-group .login-btn-to-register, .register-page .login-section .login-form .register-input-group .register-btn-to-login, .register-page .login-section .login-form .register-input-group .login-btn-to-register, .register-page .login-section .login-form .login-input-group .register-btn-to-login, .register-page .login-section .login-form .login-input-group .login-btn-to-register {
+  background-color: rgba(189, 255, 194, 0.6);
+  color: black;
+  margin: 0 85px 20px 85px;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.login-page .register-section .register-form .register-input-group .register-btn-to-home, .login-page .register-section .register-form .register-input-group .login-btn-to-home, .login-page .register-section .register-form .login-input-group .register-btn-to-home, .login-page .register-section .register-form .login-input-group .login-btn-to-home, .login-page .register-section .login-form .register-input-group .register-btn-to-home, .login-page .register-section .login-form .register-input-group .login-btn-to-home, .login-page .register-section .login-form .login-input-group .register-btn-to-home, .login-page .register-section .login-form .login-input-group .login-btn-to-home, .login-page .login-section .register-form .register-input-group .register-btn-to-home, .login-page .login-section .register-form .register-input-group .login-btn-to-home, .login-page .login-section .register-form .login-input-group .register-btn-to-home, .login-page .login-section .register-form .login-input-group .login-btn-to-home, .login-page .login-section .login-form .register-input-group .register-btn-to-home, .login-page .login-section .login-form .register-input-group .login-btn-to-home, .login-page .login-section .login-form .login-input-group .register-btn-to-home, .login-page .login-section .login-form .login-input-group .login-btn-to-home, .register-page .register-section .register-form .register-input-group .register-btn-to-home, .register-page .register-section .register-form .register-input-group .login-btn-to-home, .register-page .register-section .register-form .login-input-group .register-btn-to-home, .register-page .register-section .register-form .login-input-group .login-btn-to-home, .register-page .register-section .login-form .register-input-group .register-btn-to-home, .register-page .register-section .login-form .register-input-group .login-btn-to-home, .register-page .register-section .login-form .login-input-group .register-btn-to-home, .register-page .register-section .login-form .login-input-group .login-btn-to-home, .register-page .login-section .register-form .register-input-group .register-btn-to-home, .register-page .login-section .register-form .register-input-group .login-btn-to-home, .register-page .login-section .register-form .login-input-group .register-btn-to-home, .register-page .login-section .register-form .login-input-group .login-btn-to-home, .register-page .login-section .login-form .register-input-group .register-btn-to-home, .register-page .login-section .login-form .register-input-group .login-btn-to-home, .register-page .login-section .login-form .login-input-group .register-btn-to-home, .register-page .login-section .login-form .login-input-group .login-btn-to-home {
+  background-color: rgba(189, 255, 194, 0.6);
+  color: black;
+  margin: 0 85px 0 85px;
+  height: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.login-page .register-section .login-form, .login-page .login-section .login-form, .register-page .register-section .login-form, .register-page .login-section .login-form {
+  height: 530px;
+}
+
+.login-page .header-container, .register-page .header-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: head;
+}
+
+.login-page .footer-container, .register-page .footer-container {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: foot;
+}
+
+/********************* HEADER *********************/
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100px;
+  background-image: url("images/Screen Shot 2020-02-28 at 8.49.48 PM.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #074e00;
+}
+
+.header-container .text-front-header {
+  text-align: center;
+  margin-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  color: #074e00;
+  background-color: #dfffdb;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: default;
+}
+
+/********************* FOOTER *********************/
+.footer-container {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  bottom: 0;
+  background-color: #074e00;
+  color: white;
+}
+
+.footer-container .text-one {
+  margin-top: 10px;
+}
+
+.footer-container .text-three {
+  margin-bottom: 10px;
+}
+
+/********************* GAME PAGE*********************/
+.game-page {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  -ms-grid-rows: 100px auto 100px;
+      grid-template-rows: 100px auto 100px;
+      grid-template-areas: "head" "game" "foot";
+  /* game buttons */
+}
+
+.game-page .game-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: game;
+  display: -ms-grid;
+  display: grid;
+  background-color: #dfffdb;
+}
+
+.game-page .game-container .game-screen {
+  background-color: #074e00;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 900px;
+  width: 1100px;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 2fr;
+      grid-template-columns: 4fr 2fr;
+      grid-template-areas: "left right";
+  overflow: hidden;
+}
+
+.game-page .game-container .game-screen .game-left {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.game-page .game-container .game-screen .game-left .game-opponent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 16%;
+  margin: 20px;
+  background-color: #aaebaf;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.game-page .game-container .game-screen .game-left .game-opponent .dice-container-opponent .dice {
+  height: 80px;
+  width: 80px;
+  margin: 10px 10px 0 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 12px;
+}
+
+.game-page .game-container .game-screen .game-left .game-opponent .hide-opponent-dice {
+  opacity: 0;
+}
+
+.game-page .game-container .game-screen .game-left .game-opponent .question-mark-dice .dice {
+  background-color: #aaebaf;
+  border: none;
+  border-radius: none;
+}
+
+.game-page .game-container .game-screen .game-left .game-opponent .opponent-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas: "txt buttons";
+  height: 58%;
+  margin: 0 20px;
+  padding: 10px;
+  background-color: #dfffdb;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: txt;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+      grid-template-areas: 'gameResult gameResult' 'turn totalTurns' 'prevBetUser prevBetOp' 'general general' 'quotes quotes';
+  margin-right: 8px;
+  margin-left: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .text-box {
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .game-result-text-box {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: gameResult;
+  width: 444px;
+  background-color: #aaebaf;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-won {
+  color: #074e00;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-lost {
+  color: red;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-neutral {
+  color: black;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .current-players-turn {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: turn;
+  width: 218px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .current-players-turn .turn-text {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .current-players-turn .turn-name {
+  font-size: 1.5rem;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-turn {
+  background-color: #beff98;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .op-turn {
+  background-color: #aaebaf;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-total-turns {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: totalTurns;
+  width: 218px;
+  background-color: #beff98;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-total-turns .turns-text {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-total-turns .turns-number {
+  font-size: 1.5rem;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-prev-bet {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: prevBetUser;
+  width: 218px;
+  background-color: #beff98;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-prev-bet .user-prev-text {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .user-prev-bet .user-prev-bid {
+  font-size: 1.5rem;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .opponent-prev-bet {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: prevBetOp;
+  width: 218px;
+  background-color: #aaebaf;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .opponent-prev-bet .op-prev-text {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .opponent-prev-bet .op-prev-bid {
+  font-size: 1.5rem;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .general-text-box {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: general;
+  width: 444px;
+  background-color: #aaebaf;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .text-boxes-left .quotes-text-box {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: quotes;
+  width: 444px;
+  background-color: #aaebaf;
+  text-align: center;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: buttons;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr 2fr 6fr;
+      grid-template-rows: 2fr 2fr 6fr;
+      grid-template-areas: 'action-top' 'action-middle' 'action-bottom';
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-top {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: action-top;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-top .leave-button {
+  margin-bottom: 3px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-middle {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: action-middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-middle .start-button {
+  margin-bottom: 3px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-bottom {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: action-bottom;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 8px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-bottom .btn-game {
+  margin-bottom: 5px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-bottom .amount-of-dice-label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-bottom .value-of-dice-label {
+  margin-top: 10px;
+  margin-bottom: 3px;
+  font-size: 1.1rem;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-bottom input:nth-child(odd) {
+  margin-bottom: 3px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-bottom input {
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 150px;
+  padding: 3px;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-bottom input:hover {
+  background-color: #f7f7f7;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .actions-bottom input:focus {
+  background-color: #f0f0f0;
+}
+
+.game-page .game-container .game-screen .game-left .game-actions .actions-right .btn-game {
+  width: 200px;
+  height: 33px;
+}
+
+.game-page .game-container .game-screen .game-left .game-self {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 26%;
+  margin: 20px;
+  background-color: #beff98;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.game-page .game-container .game-screen .game-left .game-self .dice-container-user {
+  margin-top: 10px;
+}
+
+.game-page .game-container .game-screen .game-left .game-self .dice-container-user .dice {
+  height: 110px;
+  width: 110px;
+  margin: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.game-page .game-container .game-screen .game-left .game-self .hide-user-dice {
+  opacity: 0;
+}
+
+.game-page .game-container .game-screen .game-left .game-self .user-name {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.game-page .game-container .game-screen .game-left .game-self .user-login {
+  font-size: 1.1rem;
+}
+
+.game-page .game-container .game-screen .game-right {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.game-page .game-container .game-screen .game-right .rules {
+  height: 40%;
+  margin: 20px 20px 0 0;
+  padding: 10px;
+  background-color: #aaebaf;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+.game-page .game-container .game-screen .game-right .rules .codex-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.game-page .game-container .game-screen .game-right .rules .codex-rule {
+  padding: 4px;
+}
+
+.game-page .game-container .game-screen .game-right .chat {
+  height: 65%;
+  margin: 20px 20px 20px 0;
+  padding: 10px;
+  background-color: #aaebaf;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.game-page .game-container .game-screen .game-right .chat .chat-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages {
+  height: 401px;
+  width: 320px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  scrollbar-color: #074e00 #aaebaf;
+  word-wrap: break-word;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages ::-webkit-scrollbar-track {
+  border: none;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages .game-chat-message {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: flex-start;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages .game-chat-message .message-from {
+  font-weight: bold;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages .game-chat-message .message-content {
+  padding-right: 10px;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages .game-chat-message:hover {
+  background-color: #dfffdb;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages .user-color {
+  background-color: white;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages .op-color {
+  background-color: #ebebeb;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages .info-color {
+  background-color: #d6f7ff;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages .empty-div {
+  height: 0;
+  width: 0;
+}
+
+.game-page .game-container .game-screen .game-right .chat .all-chat-messages div:last-of-type {
+  margin-bottom: 0;
+}
+
+.game-page .game-container .game-screen .game-right .chat .game-chat-input {
+  margin: 10px 5px 5px 5px;
+  padding: 3px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.game-page .game-container .game-screen .game-right .chat .game-chat-input:hover {
+  background-color: #f7f7f7;
+}
+
+.game-page .game-container .game-screen .game-right .chat .game-chat-input:focus {
+  background-color: #f0f0f0;
+}
+
+.game-page .game-container .game-screen .game-right .chat .game-chat-button {
+  width: 55px;
+  height: 25px;
+  font-size: 0.9rem;
+  padding-top: 1px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.game-page .game-container .game-screen .game-right .chat .game-chat-button:hover {
+  background-color: #f7f7f7;
+}
+
+.game-page .game-container .game-screen .game-right .chat .game-chat-button:active {
+  background-color: #f0f0f0;
+}
+
+.game-page .header-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: head;
+}
+
+.game-page .footer-container {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: foot;
+}
+
+.game-page .btn-game {
+  font-size: 1.2rem;
+  border: 2px solid black;
+  width: 110px;
+  margin: 2px;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.game-page .btn-active-player {
+  background-color: #beff98;
+  color: black;
+}
+
+.game-page .btn-active-player:hover, .game-page .btn-active-player:active {
+  background-color: #074e00;
+  color: white;
+}
+
+.game-page .btn-ignore-player {
+  background-color: #dbdbdb;
+  color: black;
+}
+
+.game-page .btn-ignore-player:hover, .game-page .btn-ignore-player:active {
+  background-color: black;
+  color: white;
+}
+
+.game-page .btn-warn-player {
+  background-color: yellow;
+  color: black;
+}
+
+.game-page .btn-warn-player:hover, .game-page .btn-warn-player:active {
+  background-color: red;
+  color: white;
+}
+
+.game-page .btn-disabled {
+  background-color: #8a8a8a;
+  color: white;
+}
+/*# sourceMappingURL=App.css.map */
