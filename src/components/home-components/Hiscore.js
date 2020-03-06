@@ -67,6 +67,8 @@ export default function Hiscore({page}) {
             })
             .catch(err => {
                 console.log(`no user data for hiscores`);
+                console.log(err);
+                console.log(err.response);
             });
     }, [fetchHiscoreData]);
 

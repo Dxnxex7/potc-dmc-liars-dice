@@ -18,7 +18,6 @@ export default function Login({toHomePage, toRegisterPage, setUserAccessToken, s
             };
             axios.post('https://pure-wildwood-93382.herokuapp.com/login/', newLogin, {withCredentials: true})
                 .then(res => {
-                    console.log('tried to login');
                     if (res.data.accessToken) {
                         console.log('successfully got access token');
                         setUserAccessToken(res.data.accessToken);
@@ -28,8 +27,6 @@ export default function Login({toHomePage, toRegisterPage, setUserAccessToken, s
                     };
                 })
                 .catch(err => {
-                    console.log('failed to login');
-                    console.log(err);
                     if (err.response.data === 'usernameAndEmailNotFound') {
                         setErrorLoginText(`Username/Email does not exist.`);
                     } else if (err.response.data === `loginFail`) {
